@@ -19,6 +19,11 @@ class MoneyMachine:
         """Print the current profit"""
         print(f"Money: {self.CURRENCY} {self.profit} ")
     
-    
-
+    def process_coins(self):
+        """Return the total calculated from coins inserted."""
+        print("Please insert coins.")
+        for coin in self.COIN_VALUES:
+            self.money_recieved += int(input(f"How many {coin}?: ")) * self.COIN_VALUES[coin]
+        return self.money_recieved
+        
     
