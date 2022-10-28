@@ -13,3 +13,13 @@ class CoffeeMaker:
         print(f"Milk: {self.resources['milk']}ml")
         print(f"Coffee: {self.resources['coffee']}g")
     
+    def is_resources_surfficient(self, drink):
+        """Returns True when order can be made and false if ingredients is not enough"""
+        can_make_coffee = True
+        for item in drink.ingredients:
+            if drink.ingredients[item] > self.resources[item]:
+                print(f"Sorry there is not enough {item}.")
+                can_make_coffee = False
+        return can_make_coffee
+    
+    
