@@ -14,5 +14,11 @@ class MoneyMachine:
     def __init__(self) -> None:
         self.profit = 0
         self.money_recieved = 0
-        
+    
+    def report(self):
+        """Print the current profit"""
+        print(f"Money: {self.CURRENCY} {self.profit} ")
+    
+    
+
     
