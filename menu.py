@@ -1,8 +1,5 @@
-from defer import return_value
-
-
 class MenuItem:
-    """Models each menu items"""
+    """Models each Menu Item."""
     def __init__(self, name, water, milk, coffee, cost):
         self.name = name
         self.cost = cost
@@ -12,13 +9,14 @@ class MenuItem:
             "coffee": coffee
         }
 
+
 class Menu:
-    """Models the Menu with drinks. """
+    """Models the Menu with drinks."""
     def __init__(self):
         self.menu = [
             MenuItem(name="latte", water=200, milk=150, coffee=24, cost=2.5),
             MenuItem(name="espresso", water=50, milk=0, coffee=18, cost=1.5),
-            MenuItem(name="cappuccino", water=250, milk=50, coffee=24, cost=3)    
+            MenuItem(name="cappuccino", water=250, milk=50, coffee=24, cost=3),
         ]
 
     def get_items(self):
@@ -28,11 +26,10 @@ class Menu:
             options += f"{item.name}"
         return options
 
-
     def find_drink(self, order_name):
-        """Search for drinks in the menu. return the menu item if it exist or return None"""
+        """Searches the menu for a particular drink by name. Returns that item if it exists, otherwise returns None"""
         for item in self.menu:
             if item.name == order_name:
                 return item
-        print(f"Sorry that {item} is not available")
-        
+        print("Sorry that item is not available.")
+         
